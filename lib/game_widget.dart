@@ -14,20 +14,19 @@ class GameWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-              builder: (context) => GameWebView(gameURL: gameModel.gameUrl)),
-        );
-      },
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => GameWebView(gameURL: gameModel.gameUrl),
+        ),
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: 100,
-            width: 100,
+            height: MediaQuery.of(context).size.height * .13,
+            width: MediaQuery.of(context).size.width * .245,
             decoration: BoxDecoration(
               color: Colors.black,
               borderRadius: BorderRadius.circular(15),
@@ -38,27 +37,36 @@ class GameWidget extends StatelessWidget {
           ),
           const SizedBox(width: 20),
           SizedBox(
-            width: MediaQuery.of(context).size.width * .59,
+            width: MediaQuery.of(context).size.width -
+                MediaQuery.of(context).size.width * .43,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "${gameModel.gameTitle}\n",
-                      style: const TextStyle(
-                          fontSize: 15, fontWeight: FontWeight.bold),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width * .3,
+                      child: Text(
+                        "${gameModel.gameTitle}\n",
+                        style: const TextStyle(
+                            fontSize: 15, fontWeight: FontWeight.bold),
+                      ),
                     ),
                     const Spacer(),
                     Container(
+                      width: MediaQuery.of(context).size.width * .25,
                       padding: const EdgeInsets.symmetric(
                           horizontal: 20, vertical: 5),
                       decoration: const BoxDecoration(color: Colors.blueGrey),
-                      child: Text(
-                        gameModel.gameType,
-                        style:
-                            const TextStyle(fontSize: 15, color: Colors.white),
+                      child: Center(
+                        child: Text(
+                          gameModel.gameType,
+                          style: const TextStyle(
+                              fontSize: 15, color: Colors.white),
+                          overflow: TextOverflow.fade,
+                          maxLines: 1,
+                        ),
                       ),
                     ),
                   ],
@@ -67,7 +75,7 @@ class GameWidget extends StatelessWidget {
                   gameModel.gameDesc,
                   style: const TextStyle(fontSize: 12),
                   textAlign: TextAlign.justify,
-                  maxLines: 5,
+                  maxLines: 4,
                   overflow: TextOverflow.ellipsis,
                 ),
               ],
