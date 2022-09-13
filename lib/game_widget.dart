@@ -28,7 +28,7 @@ class GameWidget extends StatelessWidget {
             height: MediaQuery.of(context).size.height * .13,
             width: MediaQuery.of(context).size.width * .245,
             decoration: BoxDecoration(
-              color: Colors.black,
+              color: Colors.transparent,
               borderRadius: BorderRadius.circular(15),
               image: DecorationImage(
                 image: NetworkImage(gameModel.thumbnailUrl),
@@ -110,8 +110,8 @@ class GameSubWidget extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              height: 80,
-              width: 80,
+              height: MediaQuery.of(context).size.height * .11,
+              width: MediaQuery.of(context).size.width * .2,
               decoration: BoxDecoration(
                 color: Colors.transparent,
                 borderRadius: BorderRadius.circular(15),
