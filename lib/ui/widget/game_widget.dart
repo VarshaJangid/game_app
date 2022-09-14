@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '/model/game_model.dart';
 import '../game_web_view.dart';
-import '../../model/game_model.dart';
 
 class GameWidget extends StatelessWidget {
   final GameModel gameModel;

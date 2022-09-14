@@ -37,15 +37,22 @@ class _GameWebViewStat extends State<GameWebView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blueGrey,
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_back_ios),
-          onPressed: () => Navigator.pop(context),
-        ),
-      ),
-      body: WebView(
+    final isLandscape = MediaQuery.of(context).orientation;
+    return isLandscape == Orientation.landscape
+        ? body()
+        : Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.blueGrey,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back_ios),
+                onPressed: () => Navigator.pop(context),
+              ),
+            ),
+            body: body(),
+          );
+  }
+
+  Widget body() => WebView(
         initialUrl: widget.gameURL,
         javascriptMode: JavascriptMode.unrestricted,
         onWebViewCreated: (WebViewController webViewController) {
@@ -73,7 +80,5 @@ class _GameWebViewStat extends State<GameWebView> {
         },
         gestureNavigationEnabled: true,
         backgroundColor: const Color(0x00000000),
-      ),
-    );
-  }
+      );
 }
