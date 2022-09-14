@@ -1,29 +1,28 @@
+import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'dart:io';
 
-import 'package:webview_flutter/webview_flutter.dart';
-
 class GameWebView extends StatefulWidget {
   final String gameURL;
 
-  const GameWebView({required this.gameURL});
+  const GameWebView({super.key, required this.gameURL});
 
   @override
   State createState() => _GameWebViewStat();
 }
 
 class _GameWebViewStat extends State<GameWebView> {
+  final Completer<WebViewController> _controller =
+      Completer<WebViewController>();
+
   @override
   void initState() {
-    super.initState();
     if (Platform.isAndroid) {
       WebView.platform = SurfaceAndroidWebView();
     }
+    super.initState();
   }
-
-  final Completer<WebViewController> _controller =
-      Completer<WebViewController>();
 
   JavascriptChannel _toasterJavascriptChannel(BuildContext context) {
     return JavascriptChannel(
