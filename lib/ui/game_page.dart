@@ -49,7 +49,7 @@ class _GameState extends State<GamePage> {
             GameWidget(
               gameModel: GameModel(
                 gameTitle: "Cut the Rope 2",
-                gameDesc: desc2,
+                gameDesc: desc3,
                 gameUrl: "https://play.gamepix.com/cut-the-rope-2/embed?sid=1",
                 thumbnailUrl:
                     "https://games.assets.gamepix.com/40214/thumbnail/small.png",
@@ -105,4 +105,6 @@ class _GameState extends State<GamePage> {
       "Destroy enemy tokens in this modern Ludo. Play it alone, or with friends and family on one device. Roll the dice and go through the entire playing field with all the tokens. Will you come to the home area first?";
   String desc2 =
       "On Console Tank Battle is very Classical game. Super Tank Battle is a modern style Tank Battle Game with new attractive elements and 500 build-in maps, you no longer need to play on Emulator anymore. This is the game of modern war, please boom the map, summon your alliance, and strike the Enemy! Clash It! Prepare the tank battle, prepare the tank modern city war! There are 5 different difficulty levels (from easy to crazy). It should meet different people need. Game Rule 101: - Defence your base, and destroy all enemy tanks - If your tank or your base is destroyed, it will be game over. Features: - have 500 Maps can be played - helper tank (summon alliance), it is like a 2nd player to help you (Computer AI control) - special items in game - classical tank battle game's style - 20 enemy tanks per map";
+  String desc3 =
+      "SWEET! Om Nom's shenanigans continue in Cut the Rope 2 HTML5! With new characters, fresh gameplay elements and tricky missions, candy collecting has never been so fun! Cut the Rope 2 HTML5 brings fresh challenges and unanticipated obstacles to the candy crunching, physics-based phenomenon that has delighted millions of players around the world! If you like Cut the Rope, you'll love Cut the Rope 2!";
 }
